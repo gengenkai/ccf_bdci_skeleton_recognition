@@ -99,8 +99,8 @@ python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_DIR} --eval top_k_accuracy
 ```
 
 要生成 test 数据的预测结果时， 把 ann_file_val 的路径改成对应的 test.pkl 的路径。
-同时， 由于上面把比赛的带标注的数据集分成了 train/val 来训练和验证， 我们需要将所有这些 
-train/val 都用来训练，训练的 epoch 数取决于之前 train 的时候 best_pth 所在的epoch， 
+同时， 由于上面把比赛的带标注的数据集分成了 train/val 来训练和验证， 我们需要将所有这些
+train/val 都用来训练，训练的 epoch 数取决于之前 train 的时候 best_pth 所在的epoch，
 最后用 retrain 的模型来生成对比赛 test 数据的预测结果。
 
 ## Model ensemble
@@ -108,6 +108,9 @@ train/val 都用来训练，训练的 epoch 数取决于之前 train 的时候 b
 ```shell
 python data_pre/gen_test_output_ensemble.py
 ```
+
+在融合 softmax score 时，GCN-based 模型的系数选择了 1/7，PoseC3D 模型的系数选择了 1/10。
+
 
 ## License
 
