@@ -55,7 +55,7 @@ python data_pre/gen_ski_all_bone.py
 python data_pre/gen_ski_all_bone_xy.py
 ```
 
-1. generate the motion data (时间间隔 T=1 相邻两帧的对应 skeleton 在 x, y 维度上做差， confidence 维度上取两个skeleton的confidence均值)
+4. generate the motion data (时间间隔 T=1 相邻两帧的对应 skeleton 在 x, y 维度上做差， confidence 维度上取两个skeleton的confidence均值)
 
 ```shell
 python data_pre/gen_ski_all_motion.py
@@ -67,13 +67,13 @@ python data_pre/gen_ski_all_motion.py
 python data_pre/gen_ski_all_motion_5chan.py
 ```
 
-1. generate the data for PoseC3D model
+6. generate the data for PoseC3D model
 
 ```shell
 python data_pre/gen_posec3d_all.py
 ```
 
-1. augmentation (对少样本类别的 x,y 坐标进行一定的随机旋转和位移)
+7. augmentation (对少样本类别的 x,y 坐标进行一定的随机旋转和位移)
 
 ```shell
 python data_pre/analyze_augmentation.py
